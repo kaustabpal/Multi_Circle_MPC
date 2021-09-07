@@ -1,5 +1,6 @@
 import numpy as np 
 import matplotlib.pyplot as plt
+import os
 
 def get_dist(a_state, o_state):
     d = np.sqrt((o_state[0] - a_state[0])**2 + (o_state[1] - a_state[1])**2)
@@ -31,3 +32,8 @@ def draw(a_list):
         plt.scatter(a.g_state[0], a.g_state[1], marker='x', color='r')
         plt.scatter(a.x_traj, a.y_traj, marker='.', color='cyan', s=1)
         plt.plot([a.c_state1[0], a.g_state[0]], [a.c_state1[1],a.g_state[1]], linestyle='dotted', c='k')
+
+def mk_movie(name):
+    os.system('ffmpeg -r 10 -f image2 -i tmp/%d.png -s 1000x1000 -pix_fmt yuv420p -y ../2_output/' + name)
+    os.system('rm -rf tmp/*.png') # to clear the tmp folder of unnecessary screenshots
+

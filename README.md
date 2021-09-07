@@ -4,4 +4,6 @@
 
 - ffmpeg
 - cvxopt
+- matplotlib
+- numpy
 - 

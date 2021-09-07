@@ -1,6 +1,6 @@
 from mpc import Agent
 import utils
-from utils import get_dist
+from utils import get_dist, mk_movie
 import numpy as np
 import matplotlib.pyplot as plt
   
@@ -59,7 +59,7 @@ def main():
     dist7.append(get_dist(agent1.c_state1, agent7.c_state1))
     dist8.append(get_dist(agent1.c_state1, agent8.c_state1))
 
-    rec_video = False
+    rec_video = True
     if(rec_video):
         plt_sv_dir = "tmp/"
         p = 0
@@ -223,6 +223,8 @@ def main():
 
     if(timeout <= 0):
         print("Stopped because of timeout.")
+    if(rec_video):
+        mk_movie("8_agents.mp4")
 
 if __name__ == "__main__":
     main()
