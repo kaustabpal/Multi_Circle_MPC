@@ -35,5 +35,5 @@ def draw(a_list):
 
 def mk_movie(name):
     os.system('ffmpeg -r 10 -f image2 -i tmp/%d.png -s 1000x1000 -pix_fmt yuv420p -y ../2_output/' + name)
-    os.system('rm -rf tmp/*.png') # to clear the tmp folder of unnecessary screenshots
+    os.system('rm -rf tmp') # to clear the tmp folder of unnecessary screenshots
 

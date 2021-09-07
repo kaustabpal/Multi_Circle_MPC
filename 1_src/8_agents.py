@@ -3,6 +3,7 @@ import utils
 from utils import get_dist, mk_movie
 import numpy as np
 import matplotlib.pyplot as plt
+import os
   
 def main():
 
@@ -61,6 +62,7 @@ def main():
 
     rec_video = True
     if(rec_video):
+        os.system('mkdir tmp')
         plt_sv_dir = "tmp/"
         p = 0
 
